@@ -1,3 +1,4 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
 const connectDb=async()=>{
     try{
@@ -14,7 +15,7 @@ module.exports= connectDb;
 
 
 
-
+ 
 // password:MXQ40jLuzXzq3GTK
 // mongodb+srv://saubhagyabaliarsingh624:MXQ40jLuzXzq3GTK@cluster0.7kczesw.mongodb.net/
 // mongodb+srv://saubhagyabaliarsingh624:MXQ40jLuzXzq3GTK@cluster0.7kczesw.mongodb.net/
