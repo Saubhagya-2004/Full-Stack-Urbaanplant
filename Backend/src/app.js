@@ -12,14 +12,14 @@ app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 //router
 const authRouter = require('./routes/authRouter');
 const plantRouter = require('./routes/plantRouter')
-
+require('dotenv').config();
 app.use('/',authRouter);
 app.use('/',plantRouter);
 connectDb()
   .then(() => {
     console.log("Database connection sucessfully...");
-    server.listen(7777, () => {
-      console.log("Server connected sucessfully " + 7777);
+    server.listen(process.env.PORT, () => {
+      console.log("Server connected sucessfully " + process.env.PORT);
     });
   })
   .catch((err) => {

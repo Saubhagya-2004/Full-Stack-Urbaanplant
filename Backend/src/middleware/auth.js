@@ -7,7 +7,7 @@ const userAuth = async (req, res, next) => {
     if (!token) {
       return res.status(400).json("Unauthorized Acess : Token not found");
     }
-    const decodedmessage = await jwt.verify(token, "Urban@#**2025^");
+    const decodedmessage = await jwt.verify(token, process.env.JWT_SECRET);
     const { _id } = decodedmessage;
     const user = await User.findById(_id);
     if (!user) { 
